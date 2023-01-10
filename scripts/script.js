@@ -44,7 +44,9 @@ searchBar.addEventListener("input", () => {
         .includes(searchBar.value.toLocaleLowerCase())
     )
       itemElement.classList.remove("unvisible");
-    else itemElement.classList.add("unvisible");
+    else {
+      itemElement.classList.add("unvisible");
+    }
   });
 });
 
@@ -65,7 +67,6 @@ document.querySelectorAll(".catalog .item").forEach((item) => {
       item.getAttribute("attr_price"),
       item.getAttribute("attr_id")
     );
-    // console.log(newCL);
     cart.addCartline(newCL);
   });
 });

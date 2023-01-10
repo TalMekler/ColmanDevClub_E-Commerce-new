@@ -34,7 +34,7 @@ export default class Item {
         this.price = price
     }
 
-    makeHtmlItem() {
+    makeHtmlElement() {
         const st = "'" +this.img + "', " + this.title + ", " + this.desc + ", " + this.price + ", " + this.id
 
           /* Create Item wrapper div */

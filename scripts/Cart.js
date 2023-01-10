@@ -43,12 +43,7 @@ export default class Cart {
   }
 
   getCartlineByID(id) {
-    for (let i = 0; i < this.cartlines.length; i++) {
-      if (this.cartlines[i].getID() == id) {
-        return this.cartlines[i];
-      }
-    }
-    return null;
+    return this.cartlines.find(cartLine => cartLine.getID() === id)
   }
 
   addCartline(cartline) {
@@ -75,6 +70,7 @@ export default class Cart {
     if (this.getCartlineByID(id) != null) {
       const cl = this.getCartlineByID(id);
       let i;
+
       for (i = 0; i < this.cartlines.length; i++) {
         if (id == this.cartlines[i].getID()) {
           break;
@@ -92,6 +88,7 @@ export default class Cart {
   makeHtmlElement() {
     const cartBox = document.querySelector(".cart-box");
     cartBox.innerHTML = "";
+    
     this.cartlines.forEach((cl) => {
       cartBox.appendChild(cl.makeHtmlElement());
     });
