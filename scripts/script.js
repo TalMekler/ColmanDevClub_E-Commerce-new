@@ -4,9 +4,14 @@ import Catalog from "./Catalog";
 import Item from "./Item";
 import data from "../data.json";
 
-document.querySelector(".open-close-cart").addEventListener("click", () => {
+
+function handleCartClick() {
   document.querySelector(".cart-wrapper").classList.toggle("active");
   document.querySelector(".catalog").classList.toggle("active");
+}
+
+document.querySelector(".open-close-cart").addEventListener("click", () => {
+  handleCartClick()
 });
 
 document.querySelector("main").style.height =
@@ -26,11 +31,7 @@ document
       maxHeightImg = itemImgElement.offsetHeight;
   });
 
-document
-  .querySelectorAll(".catalog .item .item__img")
-  .forEach((itemImgElement) => {
-    itemImgElement.style.height = maxHeightImg + "px";
-  });
+document.querySelectorAll(".catalog .item .item__img").forEach((itemImgElement) => {itemImgElement.style.height = maxHeightImg + "px";});
 
 
 const searchBar = document.querySelector(".search-bar-wrapper input");
