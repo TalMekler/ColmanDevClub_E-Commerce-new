@@ -13,6 +13,6 @@ export default class Catalog {
     }
     addItem(item) {
         this.items.push(item);
-        document.querySelector(".catalog").innerHTML += item.makeHtmlItem();
+        document.querySelector(".catalog").appendChild(item.makeHtmlItem())
     }
 }

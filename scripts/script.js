@@ -26,21 +26,16 @@ document
       maxHeightImg = itemImgElement.offsetHeight;
   });
 
-//   if(maxHeightImg > 300)
-//     maxHeightImg =300
 document
   .querySelectorAll(".catalog .item .item__img")
   .forEach((itemImgElement) => {
     itemImgElement.style.height = maxHeightImg + "px";
   });
 
-console.log(maxHeightImg);
 
 const searchBar = document.querySelector(".search-bar-wrapper input");
 searchBar.addEventListener("input", () => {
-  console.log("search bar changed");
   document.querySelectorAll(".item").forEach((itemElement) => {
-    console.log(itemElement);
     if (
       itemElement
         .querySelector(".item__title")
@@ -69,14 +64,14 @@ document.querySelectorAll(".catalog .item").forEach((item) => {
       item.getAttribute("attr_price"),
       item.getAttribute("attr_id")
     );
-    console.log(newCL);
+    // console.log(newCL);
     cart.addCartline(newCL);
-    // removeCartline();
   });
 });
 
 
 function removeCartline() {
+  
   document
     .querySelectorAll(".cart-wrapper .cart-box .cartline")
     .forEach((cl) => {

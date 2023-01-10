@@ -133,7 +133,7 @@ main .catalog .item .item__title {
 
 main .catalog .item .item__desc {
     font-weight: 300;
-    font-size: 0.85em;
+    font-size: 0.6em;
     margin-bottom: .75rem;
     color: #6a737b;
 }
